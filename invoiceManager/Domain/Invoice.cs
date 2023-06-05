@@ -15,6 +15,15 @@ namespace invoiceManager.Domain
         public float Discount { get; set; }
         public float TotalAfterDiscount { get; set; }
         public DateTime DateTime { get; set; }
+        public bool IsCanceled { get; set; } = false;
+        public bool HasRefunds { get; set; } = false;
+        public float PaidAmount { get; set; }
+        public int RefundId { get; set; }
+        [ForeignKey("RefundId")]
+        public Refund Refund { get; set; }
+        public bool IsFullyPaid{ get; set; }
+
+
         public Invoice()
         {
             Products = new List<InvoiceProduct>();
@@ -24,4 +33,5 @@ namespace invoiceManager.Domain
         EGP,
         USD
     }
+   
 }

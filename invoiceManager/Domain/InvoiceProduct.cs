@@ -12,6 +12,8 @@ namespace invoiceManager.Domain
         public Invoice Invoice { get; set; }
         public int Quantity { get; set; }
         public float Price { get; set; }
+        public float Discount { get; set; }
+        public float PriceAfterDiscount { get; set; }
 
     }
 }
